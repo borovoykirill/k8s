@@ -7,6 +7,6 @@ metadata:
 spec:
  containers:
  - name: nginx
-   image: nginx
+   image: us.gcr.io/dc-hughes-anthos-migration/abc:25
    ports:
    - containerPort: 80
