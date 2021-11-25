@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
- name: nginx
+ name: myweb
  labels:
-  app: sampleapp
+  app: myweb
 spec:
  containers:
- - name: nginx
+ - name: myweb
    image: us.gcr.io/dc-hughes-anthos-migration/abc:25
    ports:
    - containerPort: 80
