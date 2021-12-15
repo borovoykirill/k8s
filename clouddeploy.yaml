@@ -8,12 +8,16 @@ serialPipeline:
  - targetId: dev
    profiles:
    - dev
+   - qa
  - targetId: qa
    profiles:
    - qa
+   - dev
  - targetId: prd
    profiles:
    - prod
+   - dev
+   - qa
 ---
 
 apiVersion: deploy.cloud.google.com/v1beta1
@@ -37,6 +41,6 @@ kind: Target
 metadata:
  name: prd
 description: prd cluster
-requireApproval: true
+#requireApproval: true
 gke:
  cluster: projects/dc-hughes-anthos-migration/locations/us-central1-c/clusters/prod
