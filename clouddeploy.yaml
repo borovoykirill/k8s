@@ -43,4 +43,4 @@ metadata:
 description: prd cluster
 #requireApproval: true
 gke:
- cluster: projects/dc-hughes-anthos-migration/locations/us-central1-c/clusters/prod
+ cluster: projects/dc-hughes-ant-migration-three/locations/us-central1-c/clusters/prod
