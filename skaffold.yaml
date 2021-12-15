@@ -1,0 +1,25 @@
+apiVersion: skaffold/v2beta16
+kind: Config
+deploy:
+ kubectl:
+  manifests:
+   - K8*
+  flags:
+   global:
+   - --namespace=default
+profiles:
+- name: dev
+  patches:
+  - op: replace
+    path: /deploy/kubectl/flags/global/0
+    value: --namespace=test
+- name: qa
+  patches:
+  - op: replace
+    path: /deploy/kubectl/flags/global/0
+    value: --namespace=test1
+- name: prod
+  patches: 
+  - op: replace
+    path: /deploy/kubectl/flags/global/0
+    value: --namespace=test2
