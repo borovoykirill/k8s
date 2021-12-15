@@ -1,0 +1,42 @@
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: DeliveryPipeline
+metadata:
+ name: ns-test
+description: homeapp delivery pipeline
+serialPipeline:
+ stages:
+ - targetId: dev
+   profiles:
+   - dev
+ - targetId: qa
+   profiles:
+   - qa
+ - targetId: prd
+   profiles:
+   - prod
+---
+
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+ name: dev
+description: dev cluster
+gke:
+ cluster: projects/dc-hughes-anthos-migration/locations/us-central1-c/clusters/dev
+---
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+ name: qa
+description: qa cluster
+gke:
+ cluster: projects/dc-hughes-anthos-migration-two/locations/us-central1-c/clusters/qa
+---
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+ name: prd
+description: prd cluster
+requireApproval: true
+gke:
+ cluster: projects/dc-hughes-anthos-migration/locations/us-central1-c/clusters/prod
