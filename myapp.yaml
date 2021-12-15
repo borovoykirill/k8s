@@ -15,11 +15,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
- name: myweb_service
+ name: mywebsvc
 spec:
  type: LoadBalancer
  ports:
- - port: 8080
+ - port: 8091
    protocol: TCP
    targetPort: 80
  selector:
