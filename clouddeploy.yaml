@@ -6,18 +6,11 @@ description: homeapp delivery pipeline
 serialPipeline:
  stages:
  - targetId: dev
-   profiles:
-   - dev
-   - qa
+   profiles: ["dev", "qa"]
  - targetId: qa
-   profiles:
-   - qa
-   - dev
+   profiles: ["qa", "dev"]
  - targetId: prd
-   profiles:
-   - prod
-   - dev
-   - qa
+   profiles: ["prod", "dev", "qa"]
 ---
 
 apiVersion: deploy.cloud.google.com/v1beta1
